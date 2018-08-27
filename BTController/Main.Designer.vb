@@ -41,17 +41,30 @@ Partial Class Main
         Me.BTBuzz = New System.Windows.Forms.Button()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.TrackBar1 = New System.Windows.Forms.TrackBar()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.btForwR = New System.Windows.Forms.Button()
+        Me.btForwL = New System.Windows.Forms.Button()
+        Me.btBackL = New System.Windows.Forms.Button()
+        Me.btBackR = New System.Windows.Forms.Button()
+        Me.chbAutonomouz = New System.Windows.Forms.CheckBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.BTrefresh)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.lstPorts)
         Me.GroupBox1.Controls.Add(Me.BTConnect)
-        Me.GroupBox1.Location = New System.Drawing.Point(33, 24)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
+        Me.GroupBox1.Location = New System.Drawing.Point(40, 71)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(447, 80)
         Me.GroupBox1.TabIndex = 0
@@ -60,13 +73,16 @@ Partial Class Main
         '
         'BTrefresh
         '
-        Me.BTrefresh.BackgroundImage = CType(resources.GetObject("BTrefresh.BackgroundImage"), System.Drawing.Image)
+        Me.BTrefresh.BackColor = System.Drawing.Color.Black
+        Me.BTrefresh.BackgroundImage = Global.BTController.My.Resources.Resources.icons8_refresh_500
         Me.BTrefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTrefresh.ForeColor = System.Drawing.Color.White
         Me.BTrefresh.Location = New System.Drawing.Point(324, 31)
         Me.BTrefresh.Name = "BTrefresh"
         Me.BTrefresh.Size = New System.Drawing.Size(22, 23)
         Me.BTrefresh.TabIndex = 10
-        Me.BTrefresh.UseVisualStyleBackColor = True
+        Me.BTrefresh.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -81,25 +97,30 @@ Partial Class Main
         'lstPorts
         '
         Me.lstPorts.FormattingEnabled = True
-        Me.lstPorts.Location = New System.Drawing.Point(107, 32)
+        Me.lstPorts.Location = New System.Drawing.Point(107, 33)
         Me.lstPorts.Name = "lstPorts"
         Me.lstPorts.Size = New System.Drawing.Size(211, 21)
         Me.lstPorts.TabIndex = 1
         '
         'BTConnect
         '
+        Me.BTConnect.BackColor = System.Drawing.Color.Black
+        Me.BTConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTConnect.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTConnect.ForeColor = System.Drawing.Color.White
         Me.BTConnect.Location = New System.Drawing.Point(352, 25)
         Me.BTConnect.Name = "BTConnect"
         Me.BTConnect.Size = New System.Drawing.Size(84, 35)
         Me.BTConnect.TabIndex = 0
         Me.BTConnect.Text = "Connect"
-        Me.BTConnect.UseVisualStyleBackColor = True
+        Me.BTConnect.UseVisualStyleBackColor = False
         '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.lstConsole)
-        Me.GroupBox2.Location = New System.Drawing.Point(33, 269)
+        Me.GroupBox2.ForeColor = System.Drawing.Color.White
+        Me.GroupBox2.Location = New System.Drawing.Point(50, 403)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(447, 100)
         Me.GroupBox2.TabIndex = 0
@@ -108,15 +129,21 @@ Partial Class Main
         '
         'lstConsole
         '
+        Me.lstConsole.BackColor = System.Drawing.SystemColors.Window
+        Me.lstConsole.ForeColor = System.Drawing.SystemColors.WindowText
         Me.lstConsole.FormattingEnabled = True
         Me.lstConsole.Location = New System.Drawing.Point(6, 17)
         Me.lstConsole.Name = "lstConsole"
+        Me.lstConsole.ScrollAlwaysVisible = True
         Me.lstConsole.Size = New System.Drawing.Size(435, 69)
         Me.lstConsole.TabIndex = 0
         '
         'BTTest
         '
-        Me.BTTest.Location = New System.Drawing.Point(190, 116)
+        Me.BTTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTTest.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTTest.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BTTest.Location = New System.Drawing.Point(392, 167)
         Me.BTTest.Name = "BTTest"
         Me.BTTest.Size = New System.Drawing.Size(95, 23)
         Me.BTTest.TabIndex = 3
@@ -125,52 +152,76 @@ Partial Class Main
         '
         'BTforward
         '
-        Me.BTforward.Location = New System.Drawing.Point(201, 157)
+        Me.BTforward.BackgroundImage = Global.BTController.My.Resources.Resources.seta_cima
+        Me.BTforward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTforward.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTforward.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTforward.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BTforward.Location = New System.Drawing.Point(99, 206)
         Me.BTforward.Name = "BTforward"
-        Me.BTforward.Size = New System.Drawing.Size(75, 23)
+        Me.BTforward.Size = New System.Drawing.Size(43, 54)
         Me.BTforward.TabIndex = 4
-        Me.BTforward.Text = "Forward"
         Me.BTforward.UseVisualStyleBackColor = True
         '
         'BTleft
         '
-        Me.BTleft.Location = New System.Drawing.Point(115, 191)
+        Me.BTleft.BackColor = System.Drawing.Color.Black
+        Me.BTleft.BackgroundImage = Global.BTController.My.Resources.Resources.seta_esquerda
+        Me.BTleft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTleft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTleft.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTleft.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BTleft.Location = New System.Drawing.Point(50, 268)
         Me.BTleft.Name = "BTleft"
-        Me.BTleft.Size = New System.Drawing.Size(75, 23)
+        Me.BTleft.Size = New System.Drawing.Size(43, 54)
         Me.BTleft.TabIndex = 5
-        Me.BTleft.Text = "Left"
-        Me.BTleft.UseVisualStyleBackColor = True
+        Me.BTleft.UseVisualStyleBackColor = False
         '
         'BTright
         '
-        Me.BTright.Location = New System.Drawing.Point(287, 191)
+        Me.BTright.BackColor = System.Drawing.Color.Black
+        Me.BTright.BackgroundImage = Global.BTController.My.Resources.Resources.seta_direita
+        Me.BTright.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTright.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTright.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTright.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BTright.Location = New System.Drawing.Point(148, 266)
         Me.BTright.Name = "BTright"
-        Me.BTright.Size = New System.Drawing.Size(75, 23)
+        Me.BTright.Size = New System.Drawing.Size(43, 54)
         Me.BTright.TabIndex = 6
-        Me.BTright.Text = "Right"
-        Me.BTright.UseVisualStyleBackColor = True
+        Me.BTright.UseVisualStyleBackColor = False
         '
         'BTbackward
         '
-        Me.BTbackward.Location = New System.Drawing.Point(201, 227)
+        Me.BTbackward.BackgroundImage = Global.BTController.My.Resources.Resources.seta_baixo
+        Me.BTbackward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTbackward.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTbackward.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTbackward.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BTbackward.Location = New System.Drawing.Point(99, 329)
         Me.BTbackward.Name = "BTbackward"
-        Me.BTbackward.Size = New System.Drawing.Size(75, 23)
+        Me.BTbackward.Size = New System.Drawing.Size(43, 54)
         Me.BTbackward.TabIndex = 7
-        Me.BTbackward.Text = "Backward"
         Me.BTbackward.UseVisualStyleBackColor = True
         '
         'BTstop
         '
-        Me.BTstop.Location = New System.Drawing.Point(201, 191)
+        Me.BTstop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTstop.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTstop.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BTstop.Location = New System.Drawing.Point(99, 268)
         Me.BTstop.Name = "BTstop"
-        Me.BTstop.Size = New System.Drawing.Size(75, 23)
+        Me.BTstop.Size = New System.Drawing.Size(43, 52)
         Me.BTstop.TabIndex = 8
-        Me.BTstop.Text = "Stop"
+        Me.BTstop.Text = "S"
         Me.BTstop.UseVisualStyleBackColor = True
         '
         'BTquit
         '
-        Me.BTquit.Location = New System.Drawing.Point(376, 380)
+        Me.BTquit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTquit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTquit.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BTquit.Location = New System.Drawing.Point(422, 509)
         Me.BTquit.Name = "BTquit"
         Me.BTquit.Size = New System.Drawing.Size(75, 23)
         Me.BTquit.TabIndex = 9
@@ -179,9 +230,12 @@ Partial Class Main
         '
         'BTBuzz
         '
-        Me.BTBuzz.Location = New System.Drawing.Point(376, 129)
+        Me.BTBuzz.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTBuzz.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTBuzz.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BTBuzz.Location = New System.Drawing.Point(69, 167)
         Me.BTBuzz.Name = "BTBuzz"
-        Me.BTBuzz.Size = New System.Drawing.Size(75, 23)
+        Me.BTBuzz.Size = New System.Drawing.Size(87, 33)
         Me.BTBuzz.TabIndex = 10
         Me.BTBuzz.Text = "Buzz!!"
         Me.BTBuzz.UseVisualStyleBackColor = True
@@ -191,11 +245,116 @@ Partial Class Main
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 2000
         '
-        'Form1
+        'TrackBar1
+        '
+        Me.TrackBar1.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.TrackBar1.Location = New System.Drawing.Point(15, 23)
+        Me.TrackBar1.Maximum = 11
+        Me.TrackBar1.Name = "TrackBar1"
+        Me.TrackBar1.Size = New System.Drawing.Size(146, 45)
+        Me.TrackBar1.TabIndex = 12
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox3.Controls.Add(Me.TrackBar1)
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.GroupBox3.Location = New System.Drawing.Point(326, 243)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(171, 77)
+        Me.GroupBox3.TabIndex = 14
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Velocity"
+        '
+        'btForwR
+        '
+        Me.btForwR.BackgroundImage = Global.BTController.My.Resources.Resources.seta_cima_direita
+        Me.btForwR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btForwR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btForwR.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btForwR.Location = New System.Drawing.Point(148, 206)
+        Me.btForwR.Name = "btForwR"
+        Me.btForwR.Size = New System.Drawing.Size(43, 54)
+        Me.btForwR.TabIndex = 15
+        Me.btForwR.UseVisualStyleBackColor = True
+        '
+        'btForwL
+        '
+        Me.btForwL.BackgroundImage = Global.BTController.My.Resources.Resources.seta_cima_esquerda
+        Me.btForwL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btForwL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btForwL.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btForwL.Location = New System.Drawing.Point(50, 206)
+        Me.btForwL.Name = "btForwL"
+        Me.btForwL.Size = New System.Drawing.Size(43, 54)
+        Me.btForwL.TabIndex = 16
+        Me.btForwL.UseVisualStyleBackColor = True
+        '
+        'btBackL
+        '
+        Me.btBackL.BackgroundImage = Global.BTController.My.Resources.Resources.seta_baixo_esquerda
+        Me.btBackL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBackL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btBackL.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btBackL.Location = New System.Drawing.Point(50, 329)
+        Me.btBackL.Name = "btBackL"
+        Me.btBackL.Size = New System.Drawing.Size(43, 54)
+        Me.btBackL.TabIndex = 17
+        Me.btBackL.UseVisualStyleBackColor = True
+        '
+        'btBackR
+        '
+        Me.btBackR.BackgroundImage = Global.BTController.My.Resources.Resources.seta_baixo_direita
+        Me.btBackR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBackR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btBackR.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btBackR.Location = New System.Drawing.Point(148, 329)
+        Me.btBackR.Name = "btBackR"
+        Me.btBackR.Size = New System.Drawing.Size(43, 54)
+        Me.btBackR.TabIndex = 18
+        Me.btBackR.UseVisualStyleBackColor = True
+        '
+        'chbAutonomouz
+        '
+        Me.chbAutonomouz.AutoSize = True
+        Me.chbAutonomouz.BackColor = System.Drawing.Color.Transparent
+        Me.chbAutonomouz.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chbAutonomouz.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.chbAutonomouz.Location = New System.Drawing.Point(226, 191)
+        Me.chbAutonomouz.Name = "chbAutonomouz"
+        Me.chbAutonomouz.Size = New System.Drawing.Size(111, 20)
+        Me.chbAutonomouz.TabIndex = 19
+        Me.chbAutonomouz.Text = "Autonomouz"
+        Me.chbAutonomouz.UseVisualStyleBackColor = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(66, 18)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(395, 39)
+        Me.Label2.TabIndex = 20
+        Me.Label2.Text = "Robotonomouz 205 2.0"
+        '
+        'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(525, 415)
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BackgroundImage = Global.BTController.My.Resources.Resources.fundo
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(541, 544)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.chbAutonomouz)
+        Me.Controls.Add(Me.btBackR)
+        Me.Controls.Add(Me.btBackL)
+        Me.Controls.Add(Me.btForwL)
+        Me.Controls.Add(Me.btForwR)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.BTBuzz)
         Me.Controls.Add(Me.BTquit)
         Me.Controls.Add(Me.BTstop)
@@ -207,12 +366,16 @@ Partial Class Main
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Form1"
+        Me.Name = "Main"
         Me.Text = "BTController"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
+        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -233,4 +396,12 @@ Partial Class Main
     Friend WithEvents BTBuzz As Button
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents TrackBar1 As TrackBar
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents btForwR As Button
+    Friend WithEvents btForwL As Button
+    Friend WithEvents btBackL As Button
+    Friend WithEvents btBackR As Button
+    Friend WithEvents chbAutonomouz As CheckBox
+    Friend WithEvents Label2 As Label
 End Class

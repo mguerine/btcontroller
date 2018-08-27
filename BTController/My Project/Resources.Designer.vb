@@ -63,9 +63,99 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property fundo() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("fundo", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property icons8_refresh_500() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("icons8-refresh-500", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property seta_baixo() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("seta-baixo", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property seta_baixo_direita() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("seta-baixo-direita", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property seta_baixo_esquerda() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("seta-baixo-esquerda", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property seta_cima() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("seta-cima", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property seta_cima_direita() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("seta-cima-direita", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property seta_cima_esquerda() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("seta-cima-esquerda", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property seta_direita() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("seta-direita", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property seta_esquerda() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("seta-esquerda", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

@@ -14,8 +14,9 @@ Imports System.Threading
 Public Class Main
     Dim buffer As String
     Delegate Sub myMethodDelegate(ByVal [text] As String)
-    Dim bD1 As New myMethodDelegate(AddressOf Process)
+    Dim bD1 As New myMethodDelegate(AddressOf process)
     Dim WithEvents SerialPort As New IO.Ports.SerialPort
+    Dim autonomo As Boolean
 
     Private Sub Form1_Disposed(sender As Object, e As EventArgs) Handles Me.Disposed
         If SerialPort.IsOpen() Then
@@ -62,6 +63,7 @@ Public Class Main
                 End If
             Next
         End If
+
     End Sub
 
     Private Sub SerialPort_DataReceived(ByVal sender As Object, ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles SerialPort.DataReceived
@@ -157,5 +159,72 @@ Public Class Main
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim visibleItems As Integer = lstConsole.ClientSize.Height / lstConsole.ItemHeight
         lstConsole.TopIndex = Math.Max(lstConsole.Items.Count - visibleItems + 1, 0)
+    End Sub
+
+    Private Sub btAutonomo_Click(sender As Object, e As EventArgs)
+        If (lstPorts.SelectedIndex <> -1) Then
+            SendSerialData(lstPorts.SelectedItem.ToString, "x")
+            autonomo = "M"
+        Else
+            SendSerialData(lstPorts.SelectedItem.ToString, "X")
+            autonomo = "A"
+        End If
+
+    End Sub
+
+    Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles TrackBar1.Scroll
+
+
+        If (TrackBar1.Value < 10) Then
+            SendSerialData(lstPorts.SelectedItem.ToString, TrackBar1.Value.ToString)
+        Else
+            SendSerialData(lstPorts.SelectedItem.ToString, "q")
+        End If
+
+    End Sub
+
+    Private Sub lstConsole_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstConsole.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub btForwL_Click(sender As Object, e As EventArgs) Handles btForwL.Click
+        If (lstPorts.SelectedIndex <> -1) Then
+            SendSerialData(lstPorts.SelectedItem.ToString, "G")
+        End If
+    End Sub
+
+    Private Sub btForwR_Click(sender As Object, e As EventArgs) Handles btForwR.Click
+        If (lstPorts.SelectedIndex <> -1) Then
+            SendSerialData(lstPorts.SelectedItem.ToString, "I")
+        End If
+    End Sub
+
+    Private Sub btBackL_Click(sender As Object, e As EventArgs) Handles btBackL.Click
+        If (lstPorts.SelectedIndex <> -1) Then
+            SendSerialData(lstPorts.SelectedItem.ToString, "H")
+        End If
+    End Sub
+
+    Private Sub btBackR_Click(sender As Object, e As EventArgs) Handles btBackR.Click
+        If (lstPorts.SelectedIndex <> -1) Then
+            SendSerialData(lstPorts.SelectedItem.ToString, "J")
+        End If
+    End Sub
+
+    Private Sub chbAutonomouz_CheckedChanged(sender As Object, e As EventArgs) Handles chbAutonomouz.CheckedChanged
+        If (chbAutonomouz.Checked = True) Then
+            chbAutonomouz.Checked = False
+            If (lstPorts.SelectedIndex <> -1) Then
+                SendSerialData(lstPorts.SelectedItem.ToString, "x")
+                autonomo = "M"
+            End If
+        Else
+            chbAutonomouz.Checked = True
+            If (lstPorts.SelectedIndex = -1) Then
+                SendSerialData(lstPorts.SelectedItem.ToString, "X")
+                autonomo = "A"
+            End If
+
+        End If
     End Sub
 End Class
