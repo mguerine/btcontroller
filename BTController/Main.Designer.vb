@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Main
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Main
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
@@ -49,24 +49,25 @@ Partial Class Main
         Me.btBackR = New System.Windows.Forms.Button()
         Me.chbAutonomouz = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.AjudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.BTrefresh)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.lstPorts)
-        Me.GroupBox1.Controls.Add(Me.BTConnect)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(40, 71)
+        Me.GroupBox1.Location = New System.Drawing.Point(54, 77)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(447, 80)
+        Me.GroupBox1.Size = New System.Drawing.Size(292, 62)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Connection Settings"
@@ -78,9 +79,9 @@ Partial Class Main
         Me.BTrefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BTrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTrefresh.ForeColor = System.Drawing.Color.White
-        Me.BTrefresh.Location = New System.Drawing.Point(324, 31)
+        Me.BTrefresh.Location = New System.Drawing.Point(352, 102)
         Me.BTrefresh.Name = "BTrefresh"
-        Me.BTrefresh.Size = New System.Drawing.Size(22, 23)
+        Me.BTrefresh.Size = New System.Drawing.Size(28, 28)
         Me.BTrefresh.TabIndex = 10
         Me.BTrefresh.UseVisualStyleBackColor = False
         '
@@ -88,7 +89,7 @@ Partial Class Main
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(30, 35)
+        Me.Label1.Location = New System.Drawing.Point(30, 552)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(76, 13)
         Me.Label1.TabIndex = 2
@@ -97,9 +98,9 @@ Partial Class Main
         'lstPorts
         '
         Me.lstPorts.FormattingEnabled = True
-        Me.lstPorts.Location = New System.Drawing.Point(107, 33)
+        Me.lstPorts.Location = New System.Drawing.Point(6, 25)
         Me.lstPorts.Name = "lstPorts"
-        Me.lstPorts.Size = New System.Drawing.Size(211, 21)
+        Me.lstPorts.Size = New System.Drawing.Size(280, 28)
         Me.lstPorts.TabIndex = 1
         '
         'BTConnect
@@ -108,9 +109,9 @@ Partial Class Main
         Me.BTConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTConnect.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTConnect.ForeColor = System.Drawing.Color.White
-        Me.BTConnect.Location = New System.Drawing.Point(352, 25)
+        Me.BTConnect.Location = New System.Drawing.Point(383, 99)
         Me.BTConnect.Name = "BTConnect"
-        Me.BTConnect.Size = New System.Drawing.Size(84, 35)
+        Me.BTConnect.Size = New System.Drawing.Size(102, 35)
         Me.BTConnect.TabIndex = 0
         Me.BTConnect.Text = "Connect"
         Me.BTConnect.UseVisualStyleBackColor = False
@@ -119,10 +120,11 @@ Partial Class Main
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.lstConsole)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.GroupBox2.Location = New System.Drawing.Point(50, 403)
+        Me.GroupBox2.Location = New System.Drawing.Point(54, 338)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(447, 100)
+        Me.GroupBox2.Size = New System.Drawing.Size(447, 312)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Serial Monitor"
@@ -132,10 +134,11 @@ Partial Class Main
         Me.lstConsole.BackColor = System.Drawing.SystemColors.Window
         Me.lstConsole.ForeColor = System.Drawing.SystemColors.WindowText
         Me.lstConsole.FormattingEnabled = True
-        Me.lstConsole.Location = New System.Drawing.Point(6, 17)
+        Me.lstConsole.ItemHeight = 20
+        Me.lstConsole.Location = New System.Drawing.Point(6, 20)
         Me.lstConsole.Name = "lstConsole"
         Me.lstConsole.ScrollAlwaysVisible = True
-        Me.lstConsole.Size = New System.Drawing.Size(435, 69)
+        Me.lstConsole.Size = New System.Drawing.Size(435, 284)
         Me.lstConsole.TabIndex = 0
         '
         'BTTest
@@ -143,9 +146,9 @@ Partial Class Main
         Me.BTTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTTest.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTTest.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BTTest.Location = New System.Drawing.Point(392, 167)
+        Me.BTTest.Location = New System.Drawing.Point(401, 170)
         Me.BTTest.Name = "BTTest"
-        Me.BTTest.Size = New System.Drawing.Size(95, 23)
+        Me.BTTest.Size = New System.Drawing.Size(84, 33)
         Me.BTTest.TabIndex = 3
         Me.BTTest.Text = "Bluetooth Test"
         Me.BTTest.UseVisualStyleBackColor = True
@@ -157,9 +160,9 @@ Partial Class Main
         Me.BTforward.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTforward.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTforward.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BTforward.Location = New System.Drawing.Point(99, 206)
+        Me.BTforward.Location = New System.Drawing.Point(117, 209)
         Me.BTforward.Name = "BTforward"
-        Me.BTforward.Size = New System.Drawing.Size(43, 54)
+        Me.BTforward.Size = New System.Drawing.Size(40, 40)
         Me.BTforward.TabIndex = 4
         Me.BTforward.UseVisualStyleBackColor = True
         '
@@ -171,9 +174,9 @@ Partial Class Main
         Me.BTleft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTleft.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTleft.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BTleft.Location = New System.Drawing.Point(50, 268)
+        Me.BTleft.Location = New System.Drawing.Point(73, 251)
         Me.BTleft.Name = "BTleft"
-        Me.BTleft.Size = New System.Drawing.Size(43, 54)
+        Me.BTleft.Size = New System.Drawing.Size(40, 40)
         Me.BTleft.TabIndex = 5
         Me.BTleft.UseVisualStyleBackColor = False
         '
@@ -185,9 +188,9 @@ Partial Class Main
         Me.BTright.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTright.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTright.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BTright.Location = New System.Drawing.Point(148, 266)
+        Me.BTright.Location = New System.Drawing.Point(161, 251)
         Me.BTright.Name = "BTright"
-        Me.BTright.Size = New System.Drawing.Size(43, 54)
+        Me.BTright.Size = New System.Drawing.Size(40, 40)
         Me.BTright.TabIndex = 6
         Me.BTright.UseVisualStyleBackColor = False
         '
@@ -198,9 +201,9 @@ Partial Class Main
         Me.BTbackward.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTbackward.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTbackward.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BTbackward.Location = New System.Drawing.Point(99, 329)
+        Me.BTbackward.Location = New System.Drawing.Point(117, 294)
         Me.BTbackward.Name = "BTbackward"
-        Me.BTbackward.Size = New System.Drawing.Size(43, 54)
+        Me.BTbackward.Size = New System.Drawing.Size(40, 40)
         Me.BTbackward.TabIndex = 7
         Me.BTbackward.UseVisualStyleBackColor = True
         '
@@ -209,9 +212,9 @@ Partial Class Main
         Me.BTstop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTstop.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTstop.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BTstop.Location = New System.Drawing.Point(99, 268)
+        Me.BTstop.Location = New System.Drawing.Point(117, 251)
         Me.BTstop.Name = "BTstop"
-        Me.BTstop.Size = New System.Drawing.Size(43, 52)
+        Me.BTstop.Size = New System.Drawing.Size(40, 40)
         Me.BTstop.TabIndex = 8
         Me.BTstop.Text = "S"
         Me.BTstop.UseVisualStyleBackColor = True
@@ -221,7 +224,7 @@ Partial Class Main
         Me.BTquit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTquit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTquit.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BTquit.Location = New System.Drawing.Point(422, 509)
+        Me.BTquit.Location = New System.Drawing.Point(426, 654)
         Me.BTquit.Name = "BTquit"
         Me.BTquit.Size = New System.Drawing.Size(75, 23)
         Me.BTquit.TabIndex = 9
@@ -233,7 +236,7 @@ Partial Class Main
         Me.BTBuzz.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTBuzz.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTBuzz.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BTBuzz.Location = New System.Drawing.Point(69, 167)
+        Me.BTBuzz.Location = New System.Drawing.Point(91, 170)
         Me.BTBuzz.Name = "BTBuzz"
         Me.BTBuzz.Size = New System.Drawing.Size(87, 33)
         Me.BTBuzz.TabIndex = 10
@@ -248,10 +251,10 @@ Partial Class Main
         'TrackBar1
         '
         Me.TrackBar1.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.TrackBar1.Location = New System.Drawing.Point(15, 23)
+        Me.TrackBar1.Location = New System.Drawing.Point(10, 18)
         Me.TrackBar1.Maximum = 11
         Me.TrackBar1.Name = "TrackBar1"
-        Me.TrackBar1.Size = New System.Drawing.Size(146, 45)
+        Me.TrackBar1.Size = New System.Drawing.Size(178, 45)
         Me.TrackBar1.TabIndex = 12
         '
         'GroupBox3
@@ -260,9 +263,9 @@ Partial Class Main
         Me.GroupBox3.Controls.Add(Me.TrackBar1)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.GroupBox3.Location = New System.Drawing.Point(326, 243)
+        Me.GroupBox3.Location = New System.Drawing.Point(291, 224)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(171, 77)
+        Me.GroupBox3.Size = New System.Drawing.Size(194, 77)
         Me.GroupBox3.TabIndex = 14
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Velocity"
@@ -273,9 +276,9 @@ Partial Class Main
         Me.btForwR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btForwR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btForwR.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btForwR.Location = New System.Drawing.Point(148, 206)
+        Me.btForwR.Location = New System.Drawing.Point(161, 209)
         Me.btForwR.Name = "btForwR"
-        Me.btForwR.Size = New System.Drawing.Size(43, 54)
+        Me.btForwR.Size = New System.Drawing.Size(40, 40)
         Me.btForwR.TabIndex = 15
         Me.btForwR.UseVisualStyleBackColor = True
         '
@@ -285,9 +288,9 @@ Partial Class Main
         Me.btForwL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btForwL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btForwL.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btForwL.Location = New System.Drawing.Point(50, 206)
+        Me.btForwL.Location = New System.Drawing.Point(73, 209)
         Me.btForwL.Name = "btForwL"
-        Me.btForwL.Size = New System.Drawing.Size(43, 54)
+        Me.btForwL.Size = New System.Drawing.Size(40, 40)
         Me.btForwL.TabIndex = 16
         Me.btForwL.UseVisualStyleBackColor = True
         '
@@ -297,9 +300,9 @@ Partial Class Main
         Me.btBackL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBackL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btBackL.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btBackL.Location = New System.Drawing.Point(50, 329)
+        Me.btBackL.Location = New System.Drawing.Point(73, 294)
         Me.btBackL.Name = "btBackL"
-        Me.btBackL.Size = New System.Drawing.Size(43, 54)
+        Me.btBackL.Size = New System.Drawing.Size(40, 40)
         Me.btBackL.TabIndex = 17
         Me.btBackL.UseVisualStyleBackColor = True
         '
@@ -309,9 +312,9 @@ Partial Class Main
         Me.btBackR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBackR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btBackR.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btBackR.Location = New System.Drawing.Point(148, 329)
+        Me.btBackR.Location = New System.Drawing.Point(161, 294)
         Me.btBackR.Name = "btBackR"
-        Me.btBackR.Size = New System.Drawing.Size(43, 54)
+        Me.btBackR.Size = New System.Drawing.Size(40, 40)
         Me.btBackR.TabIndex = 18
         Me.btBackR.UseVisualStyleBackColor = True
         '
@@ -321,7 +324,7 @@ Partial Class Main
         Me.chbAutonomouz.BackColor = System.Drawing.Color.Transparent
         Me.chbAutonomouz.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chbAutonomouz.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.chbAutonomouz.Location = New System.Drawing.Point(226, 191)
+        Me.chbAutonomouz.Location = New System.Drawing.Point(229, 177)
         Me.chbAutonomouz.Name = "chbAutonomouz"
         Me.chbAutonomouz.Size = New System.Drawing.Size(111, 20)
         Me.chbAutonomouz.TabIndex = 19
@@ -333,12 +336,27 @@ Partial Class Main
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(66, 18)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(132, 41)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(395, 39)
+        Me.Label2.Size = New System.Drawing.Size(280, 29)
         Me.Label2.TabIndex = 20
         Me.Label2.Text = "Robotonomouz 205 2.0"
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AjudaToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(546, 24)
+        Me.MenuStrip1.TabIndex = 21
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'AjudaToolStripMenuItem
+        '
+        Me.AjudaToolStripMenuItem.Name = "AjudaToolStripMenuItem"
+        Me.AjudaToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.AjudaToolStripMenuItem.Text = "Help"
         '
         'Main
         '
@@ -347,10 +365,12 @@ Partial Class Main
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BackgroundImage = Global.BTController.My.Resources.Resources.fundo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(541, 544)
+        Me.ClientSize = New System.Drawing.Size(546, 680)
+        Me.Controls.Add(Me.BTrefresh)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.chbAutonomouz)
         Me.Controls.Add(Me.btBackR)
+        Me.Controls.Add(Me.BTConnect)
         Me.Controls.Add(Me.btBackL)
         Me.Controls.Add(Me.btForwL)
         Me.Controls.Add(Me.btForwR)
@@ -365,7 +385,9 @@ Partial Class Main
         Me.Controls.Add(Me.BTTest)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Main"
         Me.Text = "BTController"
         Me.GroupBox1.ResumeLayout(False)
@@ -374,6 +396,8 @@ Partial Class Main
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -404,4 +428,6 @@ Partial Class Main
     Friend WithEvents btBackR As Button
     Friend WithEvents chbAutonomouz As CheckBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents AjudaToolStripMenuItem As ToolStripMenuItem
 End Class

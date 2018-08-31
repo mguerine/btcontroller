@@ -5,7 +5,7 @@
 ' 
 ' This file is part of a Bluetooth Controller for Arduino project.
 '
-' It can be copied and distributed without the express permission.
+' It can be copied and distributed without permission.
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Imports System.IO
@@ -16,7 +16,6 @@ Public Class Main
     Delegate Sub myMethodDelegate(ByVal [text] As String)
     Dim bD1 As New myMethodDelegate(AddressOf process)
     Dim WithEvents SerialPort As New IO.Ports.SerialPort
-    Dim autonomo As Boolean
 
     Private Sub Form1_Disposed(sender As Object, e As EventArgs) Handles Me.Disposed
         If SerialPort.IsOpen() Then
@@ -36,12 +35,12 @@ Public Class Main
     End Sub
 
     Sub SendSerialData(ByVal Port As String, ByVal data As String)
+        lstConsole.Items.Add("Writing " + data)
         If (SerialPort.IsOpen) Then
-            lstConsole.Items.Add("Writing " + data)
             SerialPort.Write(data)
             System.Threading.Thread.Sleep(1000)
             Dim str As String = SerialPort.ReadExisting()
-            str = "++Receiving " + str + "]"
+            str = "Receiving " + str
             Console.WriteLine(str)
             lstConsole.Items.Add(str)
         Else
@@ -77,10 +76,13 @@ Public Class Main
                 If SerialPort.IsOpen Then
                     lstPorts.Enabled = True
                     BTConnect.Text = "Connect"
+
                     SerialPort.Close()
 
                 Else
-                    lstConsole.Items.Add("Connected to " + lstPorts.SelectedItem.ToString)
+                    BTConnect.Text = "Connecting"
+                    BTConnect.ForeColor = Color.White
+                    Application.DoEvents()
                     SerialPort.PortName = lstPorts.SelectedItem.ToString
                     SerialPort.BaudRate = 9600
                     SerialPort.DataBits = 8
@@ -91,8 +93,10 @@ Public Class Main
                     SerialPort.Open()
                     lstPorts.Enabled = False
                     BTConnect.Text = "Disconnect"
+                    lstConsole.Items.Add("Connected to " + lstPorts.SelectedItem.ToString)
                 End If
             Catch ex As Exception
+                BTConnect.Text = "Connect"
                 MsgBox(ex.Message)
             End Try
         Else
@@ -161,26 +165,14 @@ Public Class Main
         lstConsole.TopIndex = Math.Max(lstConsole.Items.Count - visibleItems + 1, 0)
     End Sub
 
-    Private Sub btAutonomo_Click(sender As Object, e As EventArgs)
-        If (lstPorts.SelectedIndex <> -1) Then
-            SendSerialData(lstPorts.SelectedItem.ToString, "x")
-            autonomo = "M"
-        Else
-            SendSerialData(lstPorts.SelectedItem.ToString, "X")
-            autonomo = "A"
-        End If
-
-    End Sub
-
     Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles TrackBar1.Scroll
-
-
-        If (TrackBar1.Value < 10) Then
-            SendSerialData(lstPorts.SelectedItem.ToString, TrackBar1.Value.ToString)
-        Else
-            SendSerialData(lstPorts.SelectedItem.ToString, "q")
+        If (lstPorts.SelectedIndex <> -1) Then
+            If (TrackBar1.Value < 10) Then
+                SendSerialData(lstPorts.SelectedItem.ToString, TrackBar1.Value.ToString)
+            Else
+                SendSerialData(lstPorts.SelectedItem.ToString, "q")
+            End If
         End If
-
     End Sub
 
     Private Sub lstConsole_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstConsole.SelectedIndexChanged
@@ -212,19 +204,19 @@ Public Class Main
     End Sub
 
     Private Sub chbAutonomouz_CheckedChanged(sender As Object, e As EventArgs) Handles chbAutonomouz.CheckedChanged
-        If (chbAutonomouz.Checked = True) Then
-            chbAutonomouz.Checked = False
+        If (chbAutonomouz.Checked) Then
             If (lstPorts.SelectedIndex <> -1) Then
-                SendSerialData(lstPorts.SelectedItem.ToString, "x")
-                autonomo = "M"
+                SendSerialData(lstPorts.SelectedItem.ToString, "X")
             End If
         Else
-            chbAutonomouz.Checked = True
             If (lstPorts.SelectedIndex = -1) Then
-                SendSerialData(lstPorts.SelectedItem.ToString, "X")
-                autonomo = "A"
+                SendSerialData(lstPorts.SelectedItem.ToString, "x")
             End If
 
         End If
+    End Sub
+
+    Private Sub AjudaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AjudaToolStripMenuItem.Click
+        AboutBox1.Show()
     End Sub
 End Class
