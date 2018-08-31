@@ -13,8 +13,6 @@ Imports System.Threading
 
 Public Class Main
     Dim buffer As String
-    Delegate Sub myMethodDelegate(ByVal [text] As String)
-    Dim bD1 As New myMethodDelegate(AddressOf process)
     Dim WithEvents SerialPort As New IO.Ports.SerialPort
 
     Private Sub Form1_Disposed(sender As Object, e As EventArgs) Handles Me.Disposed
@@ -46,28 +44,6 @@ Public Class Main
         Else
             MsgBox("Not connected to Port.")
         End If
-    End Sub
-
-    Sub process(ByVal myString As String)
-        buffer = buffer + myString
-        Dim str As String
-        str = buffer
-        If InStr(str, "|") Then
-            Dim words As String() = str.Split(New Char() {"|"})
-            buffer = ""
-            Dim word As String
-            For Each word In words
-                If (word.Length > 0) Then
-                    lstConsole.Items.Add(word)
-                End If
-            Next
-        End If
-
-    End Sub
-
-    Private Sub SerialPort_DataReceived(ByVal sender As Object, ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles SerialPort.DataReceived
-        'Dim str As String = SerialPort.ReadExisting()
-        'Invoke(bD1, str)
     End Sub
 
     Private Sub BTConnect_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTConnect.Click
