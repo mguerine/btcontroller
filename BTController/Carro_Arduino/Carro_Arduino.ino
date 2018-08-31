@@ -50,6 +50,7 @@ void loop(){
   // Para o carro quando a conexão com Bluetooth é perdida ou desconectada.
   if (digitalRead(BTState) == LOW) {
     state_rec = 'S';
+    car_mode = 'M';
   }
 
   // Salva os valores da variável 'state'
@@ -57,18 +58,30 @@ void loop(){
     state_rec = Serial.read();
     state = state_rec;
     //   Serial.println(vSpeed);
+    
+    if(state == 'X'){
+      car_mode = 'A';
+    }
+    if(state == 'x'){
+      car_mode = 'M';
+    }
   }
 
-  if(state == 'X') car_mode = 'A';
-  if(state == 'x') car_mode = 'M';
 
   if (car_mode == 'A') {
-    pensar(); //inicia a função pensar 
+      reposicionaServoSonar(); //Coloca o servo para olhar a frente    
+      int distancia = lerSonar(); // Ler o sensor de distância  
+      Serial.print("distancia em cm: "); 
+      Serial.println(distancia);   // Exibe no serial monitor 
+      if (distancia > distanciaObstaculo) {  // Se a distância for maior que 20 cm  
+        rotacao_Frente(); //robô anda para frente   
+      }else{   
+        rotacao_Parado();  //para o robô  
+        posicionaCarroMelhorCaminho(); //calcula o melhor caminho    
+        //pensar();    
+      } 
   }
   if(car_mode == 'M'){
-    motor1.run(RELEASE); // Motor para  
-    motor2.run(RELEASE);  
-    
     // Altera a velocidade de acordo com valores especificados.
     if (state == '0') velocidadeMotores = 0;
     else if (state == '1') velocidadeMotores = 10;
@@ -163,17 +176,6 @@ void loop(){
 
   // Função para chamar outras funções e definir o que o robô fará  
 void pensar(){    
-  reposicionaServoSonar(); //Coloca o servo para olhar a frente    
-  int distancia = lerSonar(); // Ler o sensor de distância  
-  Serial.print("distancia em cm: "); 
-  Serial.println(distancia);   // Exibe no serial monitor 
-  if (distancia > distanciaObstaculo) {  // Se a distância for maior que 20 cm  
-    rotacao_Frente(); //robô anda para frente   
-  }else{   
-    rotacao_Parado();  //para o robô  
-    posicionaCarroMelhorCaminho(); //calcula o melhor caminho    
-    pensar();    
-  }   
 }  
     
 // Função para ler e calcular a distância do sensor ultrassônico    
@@ -262,7 +264,8 @@ void posicionaCarroMelhorCaminho(){
   Serial.print("melhor Distancia em cm: ");  
   Serial.println(melhorDist);  
   if (melhorDist == 'c'){    
-    pensar();    
+     motor1.run(FORWARD);
+     motor2.run(FORWARD); 
   }else if (melhorDist == 'd'){    
     rotacao_Direita();    
   }else if (melhorDist == 'e'){    
@@ -291,7 +294,7 @@ void rotacao_Frente(){
   Serial.println("Motor: Frente ");   
   motor1.run(FORWARD); // Roda vai para frente  
   motor2.run(FORWARD);   
-  delay(50);    
+  //delay(50);    
 }    
       
 // Função que faz o robô andar para trás e emite som quando ele dá ré    
